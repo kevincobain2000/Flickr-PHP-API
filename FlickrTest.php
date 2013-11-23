@@ -4,7 +4,8 @@ require_once('Flickr.php');
 
 class FlickrTest extends PHPUnit_Framework_TestCase
 {
-    const API_KEY = 'YOUR_API_KEY';
+    //    const API_KEY = 'YOUR_API_KEY';
+
     private $flickr;
 
     public function setUp()
