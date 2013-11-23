@@ -5,16 +5,16 @@ require_once('Flickr.php');
 class FlickrTest extends PHPUnit_Framework_TestCase
 {
     const API_KEY = 'YOUR_API_KEY';
-    private $module;
+    private $flickr;
 
     public function setUp()
     {
-        $this->module = new Flickr(self::API_KEY);
+        $this->flickr = new Flickr(self::API_KEY);
     }
 
     public function testMe()
     {
-        // var_dump(get_class($this->module));
-        // $this->assertTrue(true);
+        $urls = $this->flickr->getPhotos("Justin");
+        $this->assertTrue(!empty($urls));
     }
 }
