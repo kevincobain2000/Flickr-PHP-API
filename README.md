@@ -1,70 +1,16 @@
-# Flickr PHP API #
+Please Visit Master* or Original Repo of @ glamorous
 
-## Why this class ##
+## Tentatively
 
-I was searching for a good PHP5 class, one without PHP4 support. One that use cURL for the REST-API from [Flickr](http://flickr.com).
-With this API I wanted to give users the chance to decide in wich format they want their results and support some basic methods and
-the more advanced are possible with the custom query.
+```
+$this->flickr = new Flickr('YOUR_API_KEY');
+$small_photo_urls = $this->flickr->getPhotos("Justin", "Small");
+$large_photo_urls = $this->flickr->getPhotos("Justin", "Large");
+```
 
-## How to use ##
+## To Do
 
-### Setting API-key and default return format ###
+- Small and Large options as sizes instead of size
 
-    <?php
-	    include('flickr.php');
-	    
-	    // set the API-key
-	    Flickr::setApikey('API-key'); // change 'API-key' with yours
-	    
-	    // set the default return format
-	    // default is set to Flickr::JSON
-	    Flickr::setFormat(Flickr::PHP); // Flickr::PHP is a format for returning a serialized array
-	    
-	    $params = array(
-	       'method' => 'flickr.test.echo',
-	       'foo' => 'bar',
-	    );
-	    
-	    $flickr_results = Flickr::makeCall($params);
-	?>
-	
-### Setting it all together in one request ###
 
-    <?php
-	    include('flickr.php');
-	    
-	    $params = array(
-	       'api_key' => 'API-key',
-	       'format' => Flickr::XML,
-	       'method' => 'flickr.test.echo',
-	       'foo' => 'bar',
-	    );
-	    
-	    $flickr_results = Flickr::makeCall($params);
-	?>
 
-## Issues/Bugs ##
-
-If you find one, please inform us with the issue tracker on [github](http://github.com/glamorous/Flickr-PHP-API/issues).
-
-## Changelog ##
-
-**Flickr 0.6.1 - 02/05/2010**
-
-- [bug] deleted CURLOPT_FOLLOWLOCATION that causes errors on shared webhosting
-
-**Flickr 0.6 - 13/04/2010**
-
-- [bug] Error-number with curl is returning an int and defaults to 0  
-
-**Flickr 0.5 - 20/03/2010**
-
-- Initial version of the PHP-wrapper  
-
-## Feature Requests / To come ##
-
-If you want something to add on this plugin, feel free to fork the project on [github](http://github.com/glamorous/Flickr-PHP-API) or add an [issue](http://github.com/glamorous/Flickr-PHP-API/issues) as a feature request.
-
-## License ##
-
-This plugin has a [BSD License](http://www.opensource.org/licenses/bsd-license.php). You can find the license in license.txt that is included with class-package
